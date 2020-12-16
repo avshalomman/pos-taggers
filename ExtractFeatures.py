@@ -40,15 +40,16 @@ def init_lex():
     ents = {}
     print('initing lex')
     for lex in ['person.txt', 'misc.txt', 'location.txt', 'organization.txt']:
-        if Path(lex).is_file():
+        path = 'lexicon/' + lex
+        if Path(path).is_file():
             print(lex, 'from file')
-            with open(lex, 'r') as f:
+            with open(path, 'r') as f:
                 lines = [w.rstrip() for w in f.readlines()]
         else:
-            print(lex, 'from web, not found')
+            print(path, 'from web, not found')
             req = requests.get(LEXICON_URL + lex)
             lines = req.text.splitlines()
-            with open(lex, 'w+') as f:
+            with open(path, 'w+') as f:
                 f.writelines([w + '\n' for w in lines])
         ents[lex] = set(lines)
     global LEX
