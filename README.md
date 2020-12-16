@@ -26,5 +26,8 @@ MODEL_FILE and FEATURE_MAP_FILE will contain the model and features metadata, re
 `FeaturesTagger.py FEATURES_FILE MODEL_FILE FEATURE_MAP_FILE OUTPUT_FILE`
 
 
+This project was started as an exercise for the NLP course at the Bar Ilan University (https://u.cs.biu.ac.il/~89-680/) 
+
+
 
 
